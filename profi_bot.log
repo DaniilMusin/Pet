@@ -1,0 +1,93 @@
+2025-06-03 11:56:28,059 - INFO - Попытка 1 из 5000
+2025-06-03 11:57:31,119 - ERROR - Непредвиденная ошибка: Message: session not created: DevToolsActivePort file doesn't exist
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7ef78fea5+79173]
+	GetHandleVerifier [0x0x7ff7ef78ff00+79264]
+	(No symbol) [0x0x7ff7ef549e5a]
+	(No symbol) [0x0x7ff7ef58ca69]
+	(No symbol) [0x0x7ff7ef5865fe]
+	(No symbol) [0x0x7ff7ef582b1d]
+	(No symbol) [0x0x7ff7ef5d67de]
+	(No symbol) [0x0x7ff7ef5d5f70]
+	(No symbol) [0x0x7ff7ef5c8743]
+	(No symbol) [0x0x7ff7ef5914c1]
+	(No symbol) [0x0x7ff7ef592253]
+	GetHandleVerifier [0x0x7ff7efa5a2dd+3004797]
+	GetHandleVerifier [0x0x7ff7efa5472d+2981325]
+	GetHandleVerifier [0x0x7ff7efa73380+3107360]
+	GetHandleVerifier [0x0x7ff7ef7aaa2e+188622]
+	GetHandleVerifier [0x0x7ff7ef7b22bf+219487]
+	GetHandleVerifier [0x0x7ff7ef798df4+115860]
+	GetHandleVerifier [0x0x7ff7ef798fa9+116297]
+	GetHandleVerifier [0x0x7ff7ef77f558+11256]
+	BaseThreadInitThunk [0x0x7ffaf89c259d+29]
+	RtlUserThreadStart [0x0x7ffaf9c8af58+40]
+
+2025-06-03 11:58:25,200 - INFO - Попытка 2 из 5000
+2025-06-03 11:58:30,060 - ERROR - Непредвиденная ошибка: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7ef78fea5+79173]
+	GetHandleVerifier [0x0x7ff7ef78ff00+79264]
+	(No symbol) [0x0x7ff7ef549e5a]
+	(No symbol) [0x0x7ff7ef587b85]
+	(No symbol) [0x0x7ff7ef582b1d]
+	(No symbol) [0x0x7ff7ef5d67de]
+	(No symbol) [0x0x7ff7ef5d5f70]
+	(No symbol) [0x0x7ff7ef5c8743]
+	(No symbol) [0x0x7ff7ef5914c1]
+	(No symbol) [0x0x7ff7ef592253]
+	GetHandleVerifier [0x0x7ff7efa5a2dd+3004797]
+	GetHandleVerifier [0x0x7ff7efa5472d+2981325]
+	GetHandleVerifier [0x0x7ff7efa73380+3107360]
+	GetHandleVerifier [0x0x7ff7ef7aaa2e+188622]
+	GetHandleVerifier [0x0x7ff7ef7b22bf+219487]
+	GetHandleVerifier [0x0x7ff7ef798df4+115860]
+	GetHandleVerifier [0x0x7ff7ef798fa9+116297]
+	GetHandleVerifier [0x0x7ff7ef77f558+11256]
+	BaseThreadInitThunk [0x0x7ffaf89c259d+29]
+	RtlUserThreadStart [0x0x7ffaf9c8af58+40]
+
+2025-06-03 12:04:40,736 - INFO - Попытка 1 из 5000
+2025-06-03 17:18:39,714 - INFO - Попытка 1 из 5000
+2025-06-03 17:36:15,778 - INFO - Попытка 1 из 5000
+2025-06-03 17:47:38,893 - INFO - Попытка 1 из 5000
+2025-06-03 17:47:52,837 - INFO - Попытка 1 из 5000
+2025-06-03 17:48:10,334 - INFO - Попытка 1 из 5000
+2025-06-03 17:49:25,192 - INFO - Клик по первому заказу выполнен
+2025-06-03 17:49:26,304 - INFO - Переключились на новую вкладку
+2025-06-03 17:49:26,691 - INFO - Скриншот сохранен: screenshots/new_tab_20250603_174926.png
+2025-06-03 17:49:36,703 - ERROR - Ошибка при определении цены: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7ef78fea5+79173]
+	GetHandleVerifier [0x0x7ff7ef78ff00+79264]
+	(No symbol) [0x0x7ff7ef549e5a]
+	(No symbol) [0x0x7ff7ef5a0586]
+	(No symbol) [0x0x7ff7ef5a083c]
+	(No symbol) [0x0x7ff7ef5f4247]
+	(No symbol) [0x0x7ff7ef5c89af]
+	(No symbol) [0x0x7ff7ef5f100d]
+	(No symbol) [0x0x7ff7ef5c8743]
+	(No symbol) [0x0x7ff7ef5914c1]
+	(No symbol) [0x0x7ff7ef592253]
+	GetHandleVerifier [0x0x7ff7efa5a2dd+3004797]
+	GetHandleVerifier [0x0x7ff7efa5472d+2981325]
+	GetHandleVerifier [0x0x7ff7efa73380+3107360]
+	GetHandleVerifier [0x0x7ff7ef7aaa2e+188622]
+	GetHandleVerifier [0x0x7ff7ef7b22bf+219487]
+	GetHandleVerifier [0x0x7ff7ef798df4+115860]
+	GetHandleVerifier [0x0x7ff7ef798fa9+116297]
+	GetHandleVerifier [0x0x7ff7ef77f558+11256]
+	BaseThreadInitThunk [0x0x7ffaf89c259d+29]
+	RtlUserThreadStart [0x0x7ffaf9c8af58+40]
+
+2025-06-03 17:49:37,222 - INFO - Скриншот сохранен: screenshots/price_error_20250603_174936.png
+2025-06-03 17:49:51,180 - INFO - Попытка 1 из 5000
+2025-06-03 17:49:57,939 - INFO - Клик по первому заказу выполнен
+2025-06-03 17:49:58,948 - WARNING - Не открылась новая вкладка
+2025-06-03 17:49:59,425 - INFO - Скриншот сохранен: screenshots/no_new_tab_20250603_174958.png
+2025-06-04 00:00:22,470 - INFO - Попытка 1 из 5000
+2025-06-04 00:00:28,075 - INFO - Клик по первому заказу выполнен
+2025-06-04 00:00:29,275 - INFO - Переключились на новую вкладку
+2025-06-04 00:00:29,469 - INFO - Скриншот сохранен: screenshots/new_tab_20250604_000029.png
+2025-06-04 00:00:30,001 - INFO - Найденная цена: 1100
+2025-06-04 00:00:30,001 - INFO - Цена 1100 меньше или равна минимальной 3000. Пропускаем заказ.

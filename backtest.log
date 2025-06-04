@@ -1,0 +1,3 @@
+2025-04-10 22:22:09,657 - Backtest - ERROR - Error running backtest: [Errno 2] No such file or directory: 'C:\\Diploma\\Pet\\algorithm_new\\btc_4h_data_2018_to_2025.csv'
+2025-04-10 22:22:34,018 - Backtest - ERROR - Error running backtest: float division by zero
+2025-04-10 22:26:14,841 - Backtest - ERROR - Error running backtest: float division by zero
