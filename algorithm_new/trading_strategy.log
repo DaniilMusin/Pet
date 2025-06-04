@@ -1,0 +1,10 @@
+2025-04-10 18:06:50,662 - Strategy_Runner - ERROR - Error running backtest mode: No module named 'btc_trading_algorithm'
+2025-04-10 18:07:12,014 - numexpr.utils - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-04-10 18:07:12,015 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-04-10 18:07:14,019 - Strategy_Runner - ERROR - Error running backtest mode: cannot import name 'AdaptiveTradingStrategy' from 'btc_trading_algorithm' (C:\Diploma\Pet\algorithm new\btc_trading_algorithm.py)
+2025-04-10 18:08:37,021 - numexpr.utils - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-04-10 18:08:37,022 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-04-10 18:08:39,040 - Strategy_Runner - ERROR - Error running backtest mode: cannot import name 'AdaptiveTradingStrategy' from 'btc_trading_algorithm' (C:\Diploma\Pet\algorithm new\btc_trading_algorithm.py)
+2025-04-10 18:17:12,492 - numexpr.utils - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-04-10 18:17:12,493 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-04-10 18:17:14,155 - Strategy_Runner - ERROR - Error running backtest mode: cannot import name 'AdaptiveTradingStrategy' from 'btc_trading_algorithm' (C:\Diploma\Pet\algorithm new\btc_trading_algorithm.py)
