@@ -1945,7 +1945,8 @@ class BalancedAdaptiveStrategy:
         """Пример основного скрипта"""
         import os
         
-        base_dir = r"C:\Diploma\Pet"
+        # Use current working directory instead of hardcoded Windows path
+    base_dir = os.getcwd()
         csv_files = [f for f in os.listdir(base_dir) if f.endswith('.csv')]
         
         if not csv_files:

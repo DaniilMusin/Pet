@@ -132,7 +132,8 @@ class AdaptiveTradingStrategy:
         self.data['trend_regime'] = np.where(self.data['adx'] > self.adx_threshold, 1, 0)
         
         # Calculate percentage distance from price to middle bollinger band
-        self.data['bb_width'] = (self.data['bb_upper'] - self.data['bb_lower']) / self.data['bb_middle']
+        # Add protection against division by zero
+        self.data['bb_width'] = (self.data['bb_upper'] - self.data['bb_lower']) / self.data['bb_middle'].replace(0, np.nan)
         
         # Add confirmation indicators
         
@@ -143,7 +144,8 @@ class AdaptiveTradingStrategy:
         
         # Volume Indicators
         self.data['volume_sma'] = ta.sma(self.data['volume'], length=20)
-        self.data['volume_ratio'] = self.data['volume'] / self.data['volume_sma']
+        # Add protection against division by zero
+        self.data['volume_ratio'] = self.data['volume'] / self.data['volume_sma'].replace(0, np.nan)
         
         # Initialize all strategy columns as float64
         self.data['signal'] = 0.0
@@ -292,13 +294,15 @@ class AdaptiveTradingStrategy:
                 # Price change
                 prev_close = self.data['close'].iloc[i-1]
                 current_close = self.data['close'].iloc[i]
-                price_return = (current_close - prev_close) / prev_close
+                # Add protection against division by zero
+                price_return = (current_close - prev_close) / max(prev_close, 1e-10)
                 
                 # Adjust direction and apply leverage
                 position_return = price_return * self.data['position'].iloc[i-1] * self.leverage
                 
                 # Subtract fees for any trades in this period
-                position_return -= self.data['fee'].iloc[i] / self.data['equity'].iloc[i-1]
+                # Add protection against division by zero
+                position_return -= self.data['fee'].iloc[i] / max(self.data['equity'].iloc[i-1], 1e-10)
                 
                 # Record return
                 self.data.loc[self.data.index[i], 'returns'] = float(position_return)
@@ -311,7 +315,8 @@ class AdaptiveTradingStrategy:
         
         # Calculate drawdowns
         self.data['peak'] = self.data['equity'].cummax()
-        self.data['drawdown'] = (self.data['equity'] - self.data['peak']) / self.data['peak']
+        # Add protection against division by zero
+        self.data['drawdown'] = (self.data['equity'] - self.data['peak']) / self.data['peak'].replace(0, np.nan)
         
         return self.data
     
