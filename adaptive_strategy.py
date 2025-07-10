@@ -680,7 +680,8 @@ class EnhancedAdaptiveStrategy:
                 if current['ATR'] > 0 and not pd.isna(current['ATR_MA']) and current['ATR_MA'] > 0:
                     # Нормализуем ATR относительно его среднего значения
                     atr_ratio = current['ATR'] / current['ATR_MA']
-                    volatility_multiplier = 1.0 / atr_ratio  # Меньше риска при высокой волатильности
+                    # Защита от деления на ноль
+                    volatility_multiplier = 1.0 / max(atr_ratio, 1e-10)  # Меньше риска при высокой волатильности
                 
                 risk_per_trade = self.base_risk_per_trade * volatility_multiplier
                 # Ограничиваем мин и макс риск
@@ -718,7 +719,8 @@ class EnhancedAdaptiveStrategy:
                 # Взвешенный сигнал для лонга (средний вес сигналов)
                 long_weight = 0
                 if long_signals:
-                    long_weight = sum(weight for _, weight in long_signals) / len(long_signals)
+                    # Защита от деления на ноль
+                    long_weight = sum(weight for _, weight in long_signals) / max(len(long_signals), 1)
                 
                 # Объемный фильтр (применяем как множитель к весу сигнала)
                 volume_multiplier = 1.0
@@ -760,7 +762,8 @@ class EnhancedAdaptiveStrategy:
                 # Взвешенный сигнал для шорта (средний вес сигналов)
                 short_weight = 0
                 if short_signals:
-                    short_weight = sum(weight for _, weight in short_signals) / len(short_signals)
+                    # Защита от деления на ноль
+                    short_weight = sum(weight for _, weight in short_signals) / max(len(short_signals), 1)
                 
                 # Объемный фильтр (применяем как множитель к весу сигнала)
                 short_weight = short_weight * volume_multiplier
@@ -786,8 +789,9 @@ class EnhancedAdaptiveStrategy:
                     
                     # Расчет размера позиции с учетом риска
                     max_risk_amount = balance * risk_per_trade
-                    max_loss_percentage = (entry_price - stop_loss_price) / entry_price * self.max_leverage
-                    position_size = max_risk_amount / max_loss_percentage if max_loss_percentage > 0 else 0
+                    max_loss_percentage = (entry_price - stop_loss_price) / max(entry_price, 1e-10) * self.max_leverage
+                    # Защита от деления на ноль
+                    position_size = max_risk_amount / max(max_loss_percentage, 1e-10) if max_loss_percentage > 0 else 0
                     
                     # Проверка на максимальный размер позиции
                     if position_size > balance:
@@ -829,8 +833,9 @@ class EnhancedAdaptiveStrategy:
                     
                     # Расчет размера позиции с учетом риска
                     max_risk_amount = balance * risk_per_trade
-                    max_loss_percentage = (stop_loss_price - entry_price) / entry_price * self.max_leverage
-                    position_size = max_risk_amount / max_loss_percentage if max_loss_percentage > 0 else 0
+                    max_loss_percentage = (stop_loss_price - entry_price) / max(entry_price, 1e-10) * self.max_leverage
+                    # Защита от деления на ноль
+                    position_size = max_risk_amount / max(max_loss_percentage, 1e-10) if max_loss_percentage > 0 else 0
                     
                     # Проверка на максимальный размер позиции
                     if position_size > balance:

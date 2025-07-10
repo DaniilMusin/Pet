@@ -2033,8 +2033,8 @@ def main():
     """Main function to execute the strategy"""
     import os
     
-    # Define the path to your data file
-    base_dir = r"C:\Diploma\Pet"
+    # Define the path to your data file - use current working directory instead of hardcoded Windows path
+    base_dir = os.getcwd()
     
     # List CSV files in the directory
     csv_files = [f for f in os.listdir(base_dir) if f.endswith('.csv')]

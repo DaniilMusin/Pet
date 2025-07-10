@@ -1814,7 +1814,8 @@ def main():
     import os
 
     # --- Настройка ---
-    base_dir = r"C:\Diploma\Pet" # Укажите ваш путь
+    # Use current working directory instead of hardcoded Windows path
+    base_dir = os.getcwd()  # Укажите ваш путь
     # Ищем первый CSV файл в директории
     csv_files = [f for f in os.listdir(base_dir) if f.endswith('.csv')]
     if not csv_files:

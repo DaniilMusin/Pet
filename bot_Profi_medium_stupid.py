@@ -238,9 +238,20 @@ while True:
         
         # Открываем страницу
         options = webdriver.ChromeOptions()
-        options.binary_location = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
-        options.add_argument("user-data-dir=C:/Users/Daniil/AppData/Local/Google/Chrome/User Data/Default_Profi")
+        # Remove hardcoded Windows Chrome path - let system find Chrome automatically
+        # options.binary_location = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+        
+        # Create a temporary user data directory instead of hardcoded Windows path
+        import tempfile
+        temp_user_data_dir = tempfile.mkdtemp(prefix='chrome_user_data_')
+        options.add_argument(f"--user-data-dir={temp_user_data_dir}")
+        
+        # Add additional Chrome options for better stability
         options.add_argument("--disable-blink-features=AutomationControlled")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--remote-debugging-port=9222")
         driver = webdriver.Chrome(options=options)
         url = "https://profi.ru/backoffice/n.php"
         driver.get(url)
